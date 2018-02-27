@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>L'appli Météo</title>
+</head>
+<body style="overflow-x:hidden;">
+    <div class="app">
+        <div class="page" data-role="page" id="pres" data-theme="a">
+            <div class="header" data-role="header">
+                <span class="ui-left battery"></span>
+                <h1>L'appli Météo</h1>
+                <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#pres" class="ui-btn-active ui-state-persist">Ma météo</a></li>
+                        <li><a href="#videos">Derniers bulletins</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div role="main" class="ui-content meteo">
+                    <div id="weather"></div>
+            </div>
+            <div data-role="footer" class="nav-glyphish-example">
+                <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+                    <ul>
+                        <li><a href="#" onclick="window.open('https://www.facebook.com/MeteoFrance', '_system')">Facebook</a></li>
+                        <li><a href="#" onclick="window.open('https://twitter.com/meteofrance', '_system')">Twitter</a></li>
+                        <li><a href="#" onclick="window.open('https://www.instagram.com/meteofrance/', '_system')">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" data-role="page" id="videos">
+            <div class="header" data-role="header" data-position="fixed">
+                <span class="ui-left battery"></span>
+                <h1>L'appli Météo</h1>
+                <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#pres">Ma météo</a></li>
+                        <li><a href="#videos" class="ui-btn-active ui-state-persist">Derniers bulletins</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div role="main" class="ui-content">
+                <div id="vids"></div>
+            </div>
+            <div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+                <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+                    <ul>
+                        <li><a href="#" onclick="window.open('https://www.facebook.com/MeteoFrance', '_system')">Facebook</a></li>
+                        <li><a href="#" onclick="window.open('https://twitter.com/meteofrance', '_system')">Twitter</a></li>
+                        <li><a href="#" onclick="window.open('https://www.instagram.com/meteofrance/', '_system')">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" data-role="page" id="settings" data-theme="a">
+            <div class="header" data-role="header" data-position="fixed">
+                <span class="ui-left battery"></span>
+                <h1>L'appli Météo</h1>
+                <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#pres">Ma météo</a></li>
+                        <li><a href="#videos">Derniers bulletins</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div role="main" class="ui-content">
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="night" style="display: inline;">Mode nuit :</label>
+                        <input type="checkbox" id="night" data-role="flipswitch" data-mini="true"><br/><br/>
+                    </div>
+                </form>
+            </div>
+            <div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+                <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+                    <ul>
+                        <li><a href="#" onclick="window.open('https://www.facebook.com/MeteoFrance', '_system')">Facebook</a></li>
+                        <li><a href="#" onclick="window.open('https://twitter.com/meteofrance', '_system')">Twitter</a></li>
+                        <li><a href="#" onclick="window.open('https://www.instagram.com/meteofrance/', '_system')">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.js"></script>
+    <script src='js/credentials.js'></script>
+    <script src="js/getWeather.js"></script>
+    <script src="js/getVids.js"></script>
+    <script defer>
+    $(document).ready(function () {
+        console.log($('#night').is(':checked'));
+        $("#night").bind( "change", function() {
+            $('#night').is(':checked') ? $('.page').removeClass("ui-page-theme-a").addClass("ui-page-theme-b") : $('.page').removeClass("ui-page-theme-b").addClass("ui-page-theme-a");
+        });
+    });
+    </script>
+</body>
+
+</html>

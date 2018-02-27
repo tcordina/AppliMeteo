@@ -1,0 +1,52 @@
+body {
+    height: auto !important;
+    margin: 0;
+}
+.meteo {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    height: calc(100vh - 115px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #eee;
+    text-shadow: 0 0 10px #333;
+}
+#city {
+    font-weight: bold;
+    font-size: 50px;
+}
+#hour {
+    font-size: 35px;
+}
+#temp {
+    font-size: 30px;
+}
+#desc {
+    font-size: 30px;
+}
+#last {
+    font-size: 10px;
+}
+.center-img {
+    display: block;
+    margin: 0 auto;
+}
+.center-item {
+    margin: 0 auto;
+}
+.center-text {
+    text-align: center;
+}
+.center-block {
+    text-align: center;
+}
+.center-block * {
+    margin: 0 auto;
+}
+.progress-like {
+    background-color: #d9534f !important;
+}

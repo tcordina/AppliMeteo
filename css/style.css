@@ -2,6 +2,12 @@ body {
     height: auto !important;
     margin: 0;
 }
+#error {
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+    color: #a94442;
+}
 .meteo {
     font-family: 'Lato', sans-serif;
     padding: 0;
@@ -28,8 +34,8 @@ body {
 #desc {
     font-size: 30px;
 }
-#last {
-    font-size: 10px;
+#wind {
+    font-size: 20px;
 }
 .center-img {
     display: block;

@@ -55,7 +55,7 @@ $(document).ready(function () {
                 var date = new Date(videoDateTime);
                 var videoDate = date.getDate() + '/' + (+date.getMonth() + +1) + '/' + date.getFullYear();
                 var likeRatio = Math.round((videoLikes/(1*videoLikes + 1*videoDislikes))*100);
-                output = '<div class="video" data-sort="'+videoDate+'"><img class="center-img" src="'+videoThumb+'" alt=""><a href="https://www.youtube.com/watch?v='+videoId+'" target="_blank"><h4 class="center-text">'+videoTitle+'</h4></a><p>'+videoViews+' vues | '+videoComments+' commentaires</p><p><i>publiée le '+videoDate+'</p></div>';
+                output = '<div class="video" data-sort="'+videoDate+'"><img class="center-img" src="'+videoThumb+'" alt=""><a href="https://www.youtube.com/watch?v='+videoId+'" target="_blank"><h4 class="center-text">'+videoTitle+'</h4></a><p>'+videoViews+' vues | '+videoComments+' commentaires</p><p><i>publié le '+videoDate+'</p></div>';
                 $('#vids').append(output);
             },
             async: true

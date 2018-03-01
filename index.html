@@ -24,8 +24,9 @@
                     </ul>
                 </div>
             </div>
+            <div id="error"></div>
             <div role="main" class="ui-content meteo">
-                    <div id="weather"></div>
+                <div id="weather"></div>
             </div>
             <div data-role="footer" class="nav-glyphish-example">
                 <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
@@ -83,6 +84,7 @@
                         <input type="checkbox" id="night" data-role="flipswitch" data-mini="true"><br/><br/>
                     </div>
                 </form>
+                <div id="soutput"></div>
             </div>
             <div data-role="footer" class="nav-glyphish-example" data-position="fixed">
                 <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
@@ -103,7 +105,6 @@
     <script src="js/getVids.js"></script>
     <script defer>
     $(document).ready(function () {
-        console.log($('#night').is(':checked'));
         $("#night").bind( "change", function() {
             $('#night').is(':checked') ? $('.page').removeClass("ui-page-theme-a").addClass("ui-page-theme-b") : $('.page').removeClass("ui-page-theme-b").addClass("ui-page-theme-a");
         });
